@@ -1,0 +1,11 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    network_mode: host
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+      - /home/campbell/media:/media:ro
+    restart: unless-stopped
+
